@@ -9,7 +9,7 @@ source:
   sha256: e84c991e431cf06b61c25354fcf30ee2b4677fa835f3685775c2c8b05b4a250b
 
 build:
-  number: 0
+  number: 1000
   # is pure python, uses 2to3, and depends on libpysal that is py3k only!
   skip: True  # [py2k]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
