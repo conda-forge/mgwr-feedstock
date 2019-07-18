@@ -10,20 +10,19 @@ source:
 
 build:
   number: 0
-  # is pure python, uses 2to3, and depends on libpysal that is py3k only!
-  skip: True  # [py2k]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
-    - libpysal
-    - numpy
-    - scipy
-    - spglm
+    - python >=3.5
+    - libpysal >=4.0.0
+    - numpy >=1.3
+    - scipy >=0.11
+    - spglm >=1.0.6
     - spreg
 
 test:
