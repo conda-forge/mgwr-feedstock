@@ -1,4 +1,4 @@
-{% set version = "2.0.1" %}
+{% set version = "2.1.1" %}
 
 package:
   name: mgwr
@@ -6,24 +6,23 @@ package:
 
 source:
   url: https://pypi.io/packages/source/m/mgwr/mgwr-{{ version }}.tar.gz
-  sha256: e84c991e431cf06b61c25354fcf30ee2b4677fa835f3685775c2c8b05b4a250b
+  sha256: 030ba251859d7a9d3d28aea08e5ecbf4e0a1a15c94030d743eb36fd8d351eabc
 
 build:
-  number: 1000
-  # is pure python, uses 2to3, and depends on libpysal that is py3k only!
-  skip: True  # [py2k]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
-    - libpysal
-    - numpy
-    - scipy
-    - spglm
+    - python >=3.5
+    - libpysal >=4.0.0
+    - numpy >=1.3
+    - scipy >=0.11
+    - spglm >=1.0.6
     - spreg
 
 test:
