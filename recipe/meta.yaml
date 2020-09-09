@@ -1,4 +1,4 @@
-{% set version = "2.1.1" %}
+{% set version = "2.1.2" %}
 
 package:
   name: mgwr
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/m/mgwr/mgwr-{{ version }}.tar.gz
-  sha256: 030ba251859d7a9d3d28aea08e5ecbf4e0a1a15c94030d743eb36fd8d351eabc
+  sha256: cc5e845e70f169a0eb9aaf2cb27391cecb6cff27ca4916f7e9f7bba19338d26d
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -32,9 +32,10 @@ test:
 about:
   home: https://github.com/pysal/mgwr
   license: BSD-3-Clause
+  license_file: LICENSE
   # https://github.com/pysal/mgwr/issues/25
   # license_file: 
-  summary: 'Multiscale geographically weighted regression'
+  summary: Multiscale geographically weighted regression
 
 extra:
   recipe-maintainers:
