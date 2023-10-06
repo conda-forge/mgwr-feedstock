@@ -9,7 +9,7 @@ source:
   sha256: cc5e845e70f169a0eb9aaf2cb27391cecb6cff27ca4916f7e9f7bba19338d26d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -36,6 +36,8 @@ about:
   # https://github.com/pysal/mgwr/issues/25
   # license_file: 
   summary: Multiscale geographically weighted regression
+  doc_url: https://mgwr.readthedocs.io
+  dev_url: http://github.com/pysal/mgwr
 
 extra:
   recipe-maintainers:
